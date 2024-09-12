@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+
+
+  bot:
+    build:
+      context: .
+      dockerfile: ./src/Dockerfile
+    command: sh -c "poetry run python -m src"
+    restart: unless-stopped
+
+
+
+
