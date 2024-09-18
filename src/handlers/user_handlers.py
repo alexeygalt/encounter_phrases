@@ -5,7 +5,7 @@ from aiogram.fsm.state import StatesGroup, State
 from aiogram.types import Message, FSInputFile
 from src.const import PHRASES
 from src.lexicon.lexicon import HELP_MESSAGE
-from src.utils import search_word_in_phraseological_list
+from src.utils import search_word_in_phraseological_list, send_long_message
 
 router = Router()
 
@@ -47,4 +47,4 @@ async def handle_search_query(message: Message, state: FSMContext):
         else:
             response = "Ничего не найдено."
 
-        await message.answer(response)
+        await send_long_message(message.answer, response)
